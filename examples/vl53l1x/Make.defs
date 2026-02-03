@@ -1,0 +1,3 @@
+ifneq ($(CONFIG_EXAMPLES_VL53L1X),)
+CONFIGURED_APPS += $(APPDIR)/examples/vl53l1x
+endif

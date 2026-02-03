@@ -1,0 +1,38 @@
+#
+# VL53L1X Time-of-Flight sensor example
+#
+
+config EXAMPLES_VL53L1X
+	tristate "VL53L1X ToF example"
+	default n
+	depends on I2C && SENSORS_VL53L1X
+	---help---
+		Enable the VL53L1X distance sensor example.
+
+if EXAMPLES_VL53L1X
+
+config EXAMPLES_VL53L1X_PROGNAME
+	string "Program name"
+	default "vl53l1x"
+	---help---
+		Name of the executable in NSH.
+
+config EXAMPLES_VL53L1X_PRIORITY
+	int "Task priority"
+	default 100
+
+config EXAMPLES_VL53L1X_STACKSIZE
+	int "Stack size"
+	default DEFAULT_TASK_STACKSIZE
+
+config EXAMPLES_VL53L1X_DEVPATH
+	string "Device path"
+	default "/dev/tof0"
+	---help---
+		Path to the VL53L1X character device.
+
+config EXAMPLES_VL53L1X_INTERVAL_MS
+	int "Measurement interval (ms)"
+	default 1000
+
+endif

@@ -1,0 +1,14 @@
+include $(APPDIR)/Make.defs
+
+# VL53L1X example built-in application
+
+PROGNAME  = $(CONFIG_EXAMPLES_VL53L1X_PROGNAME)
+PRIORITY  = $(CONFIG_EXAMPLES_VL53L1X_PRIORITY)
+STACKSIZE = $(CONFIG_EXAMPLES_VL53L1X_STACKSIZE)
+MODULE    = $(CONFIG_EXAMPLES_VL53L1X)
+
+# Source files
+
+MAINSRC = vl53l1x_main.c
+
+include $(APPDIR)/Application.mk
